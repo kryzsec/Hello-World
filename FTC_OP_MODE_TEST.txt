@@ -1,0 +1,4 @@
+As part of the First Tech Challenge (FTC) I will be responsible for my team in producing a program that runs our robot. 
+All commits to that will be put in its own repository under the java folder as each language will be seperate.
+
+No current software plans have been made for our robot.
