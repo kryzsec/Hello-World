@@ -1,0 +1,42 @@
+There are many network stress testing tools out there such as Low Orbit Ion Cannon (LOIC) and the 
+newer High Orbit Ion Cannon (HOIC) but both have their own flaws. With this I plan on making a 
+network stress testing tool in python that when ran acts as a GUI that can be used to simplify many 
+of the processes for the user. I chose python for the fact that it has higher portability over C and C++
+meaning that the networking protocalls will be muchh easier to implement and by being a simpler language to
+overcome certain barriers. As well, having almost no experience with network related experience I thought
+an easier language would help myself get the hang of the project.
+
+The goal of the project is quite simple, the stress test will have an array of different type of attacks 
+that one could use against a server, that way if a network admin uses the tool they have an idea of how
+different attacks will effect the system and possibly find a few ways to mitigate any potential damage.
+
+Attack modes at this moment will be as follows: [Slow-GET][Slow-Post][HTTP-REFRESH][PoD]
+
+Explanation of each attack:
+
+  [Slow-GET]
+
+The Slow-GET is also commonly known as the slowloris attack as a crafted malformed packet slowly gets sent piece by piece until
+all of the server bandwidth is used. It takes minimal bandwidth from the attacker and effects specific servers but can be deadly.
+To protect yourself from each of the attacks if they work, here is one link that may explain how: https://blog.qualys.com/securitylabs/2011/11/02/how-to-protect-against-slow-http-attacks
+
+  [Slow-POST]
+  
+Slow-POST is much like the slow-GET but it effects some different servers altogether. Uses minimal bandwidth to 
+effectively takedown a server as the server uses resources listening for these packets to arrive.
+
+  [HTTP-Refresh]
+  
+This is basically like pinging your enemy to death or if you were to like try and hit refresh on the website 1000's of times a second
+
+  [PoD]
+
+The ping of death is a specially crafted ping packet that causes a buffer overflow. Now due to this working with a direct exploit
+that could be very dangerous I am trying to find a way to truly make this better, maybe have the attacker insert their own shellcode
+to try with some pre-assembled for a few different server types (Microsoft, Apache, etc)
+
+Now before someone says that this is illegal and they think I should go to jail, the reason I plan on making this is so that
+network admins can use a tool to find ways to better make servers, for my own experience as both an attacker and a defender when
+setting up private servers to attack, and to provide myself with a project to teach me aspects of web security that I 
+otherwise would never have known. This software will be open source and intended for educational purposes, what you do with it is 
+under your responsibility. 
